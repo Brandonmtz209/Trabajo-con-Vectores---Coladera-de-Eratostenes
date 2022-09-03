@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //inicializacion de array
+        let coladera = new Array();
+        //loop para que añade 1000 elementos al array con el valor de 1 utilizando el metodo push
+        for (let i = 0 ; i < 1000; i++){
+            coladera.push(1);
+        }
+        //ignorando el elemento 0 del array con i=2, el primer for recorre a todos los elementos del array 
+        for (let i = 2; i <= 1000; i++){
+            //el if verifica si el valor del elemento es true=1 o falso=0
+            if (coladera[i] === 1) {
+                //con este loop se declara una variable para saber el valor de i*i para tomar esa posicion en el array y ponerlo en 0
+                // (ej.2*2=4 y esa posicion en array se pone el 0)
+                // y asi el ciclo se repite con todos los valores que multiplicados por si mismo se pone en 0
+                for (let variable = i * i; variable < 1000; variable += i){
+                    coladera[variable] = 0;
+                }
+                //imprime todos los elementos del array que son true, es decir 1
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
